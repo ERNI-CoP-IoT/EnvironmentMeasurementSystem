@@ -1,7 +1,7 @@
 # About EnvironmentMeasurementSystem
 
 ERNI Cross platform IoT show case
-
+![Environment](./docs/images/iot-air-quality-monitoring-systems.jpg)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
