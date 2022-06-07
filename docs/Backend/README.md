@@ -10,7 +10,7 @@
 
 ## Prerequisites
 
-To run and play with the device project you need to install the following ides/tools that you like more:
+To run and play with the backend project you need to install the following ides/tools that you like more:
 
 * Visual studio
 * Visual studio code

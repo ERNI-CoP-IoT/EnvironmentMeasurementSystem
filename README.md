@@ -13,17 +13,18 @@ The project is devided with the following folder structure
 
 . \
 ├─ 📁docs: Contains all documentation to related to this project\
-│  └─ 📂Devices: Contains all the documentation that will be needed to build and develope the devices\
-│  └─ 📂Digital Twins: Contains all the documentation to run/build the digital twins\
-│  └─ 📂Backend: Contains all the documentation that will be need to develope/deploy the cloud applications/webs\
-│  └─ 📂UI: Contains all the documentation for the UI\
+│  ├─ 📂[Devices](/docs/Devices/README.md): Contains all the documentation that will be needed to build and develope the devices\
+│  ├─ 📂[Digital Twins](/docs/Digital%20Twins/README.md): Contains all the documentation to run/build the digital twins\
+│  ├─ 📂[Backend](/docs/Backend/README.md): Contains all the documentation that will be need to develope/deploy the cloud applications/webs\
+│  ├─ 📂[UI](/docs/UI/README.md): Contains all the documentation for the UI\
+│  └─ 📂[Scripts](/docs/Scripts/README.md): Contains all the documentation for the scripts.\
 ├─ 📂scripts: Contains all scripts to deploy the application\
 ├─ 📂src: Contains all the code to run the application\
-│  └─ 📂Devices: Contains all the code that will be deployed to the devices\
-│  └─ 📂Digital Twins: Contains all the code to run the digital twins\
-│  └─ 📂Backend: Contains all the code that will be in the cloud\
-│  └─ 📂UI: Contains all the code for the UI interfaces\
-│  │  └─ 📂 FrontEnd\
+│  ├─ 📂Devices: Contains all the code that will be deployed to the devices\
+│  ├─ 📂Digital Twins: Contains all the code to run the digital twins\
+│  ├─ 📂Backend: Contains all the code that will be in the cloud\
+│  ├─ 📂UI: Contains all the code for the UI interfaces\
+│  │  ├─ 📂 FrontEnd\
 │  │  └─ 📂 Mobile\
 │  └─ 📂AI/ML: Contains all the code for the AI/ML\
 └─ 📂test: Contains all the tests
