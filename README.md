@@ -13,6 +13,10 @@ The project is devided with the following folder structure
 
 . \
 ├─ 📁docs: Contains all documentation to related to this project\
+│  └─ 📂Devices: Contains all the documentation that will be needed to build and develope the devices\
+│  └─ 📂Digital Twins: Contains all the documentation to run/build the digital twins\
+│  └─ 📂Backend: Contains all the documentation that will be need to develope/deploy the cloud applications/webs\
+│  └─ 📂UI: Contains all the documentation for the UI\
 ├─ 📂scripts: Contains all scripts to deploy the application\
 ├─ 📂src: Contains all the code to run the application\
 │  └─ 📂Devices: Contains all the code that will be deployed to the devices\
