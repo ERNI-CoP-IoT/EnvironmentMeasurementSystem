@@ -39,6 +39,66 @@ Here you can find all the components needed for this project and where to buy th
 
 Add all pcb scketches and where to buy them
 
+## Supported Networks
+
+* Wifi
+* LoraWAN
+* Bluetooth LTE
+* Zigbee
+* Sigfox
+* NB-IOT/GSM
+
+## Supported Device Boards
+
+* Arduino Base
+* Raspberry PI base
+* Bear Metal base
+
+## Components
+
+* ESP8266
+* ESP32
+* ARM Cortext
+* DHT22/MCP9808
+* BMP085/180
+* MiCS5524
+* MiCS2714
+* SDS011
+* Case
+  * IP44
+  * IP66
+
+## Sensors
+
+* Temperature
+* Humidity
+* CO2
+* NOx
+* PM2.5/10
+* Pressure
+* Battery Level
+
+## Device Capabilities
+
+1. Power Safe (sleep)
+2. Firmware Update (OTA/USB)
+3. Security
+4. Authentication
+5. Provisioning
+6. Configuration
+   1. Over mobile
+   2. Over internal website
+   3. Data filtering Rules (time of measurement, deltas, …)
+7. Protocols:
+   1. MQTT
+   2. AMQP
+   3. OPC/UA
+   4. HTTPS
+8. Message Format
+   1. Json
+   2. Binary
+   3. Protobuf
+
 ## How to
 
 ### Device assembly
