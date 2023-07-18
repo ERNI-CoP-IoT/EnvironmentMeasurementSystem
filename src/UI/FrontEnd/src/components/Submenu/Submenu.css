@@ -1,0 +1,8 @@
+.sidebarLabel{
+    margin-right: 1rem;
+}
+
+.sidebarItem {
+    display: flex;
+    align-items: center; 
+  }

@@ -1,0 +1,14 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+.tabs li {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
