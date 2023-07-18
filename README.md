@@ -3,7 +3,7 @@
 ERNI Cross platform IoT show case
 ![Environment](./docs/images/iot-air-quality-monitoring-systems.jpg)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Getting Started
@@ -104,9 +104,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/Rabosa616"><img src="https://avatars.githubusercontent.com/u/12774781?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rabosa616</b></sub></a><br /><a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Rabosa616" title="Code">💻</a> <a href="#content-Rabosa616" title="Content">🖋</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Rabosa616" title="Documentation">📖</a> <a href="#design-Rabosa616" title="Design">🎨</a> <a href="#ideas-Rabosa616" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Rabosa616" title="Maintenance">🚧</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Rabosa616" title="Tests">⚠️</a> <a href="#example-Rabosa616" title="Examples">💡</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/pulls?q=is%3Apr+reviewed-by%3ARabosa616" title="Reviewed Pull Requests">👀</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Rabosa616"><img src="https://avatars.githubusercontent.com/u/12774781?v=4?s=100" width="100px;" alt="Rabosa616"/><br /><sub><b>Rabosa616</b></sub></a><br /><a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Rabosa616" title="Code">💻</a> <a href="#content-Rabosa616" title="Content">🖋</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Rabosa616" title="Documentation">📖</a> <a href="#design-Rabosa616" title="Design">🎨</a> <a href="#ideas-Rabosa616" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Rabosa616" title="Maintenance">🚧</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Rabosa616" title="Tests">⚠️</a> <a href="#example-Rabosa616" title="Examples">💡</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/pulls?q=is%3Apr+reviewed-by%3ARabosa616" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.betterask.erni/"><img src="https://avatars.githubusercontent.com/u/100421143?v=4?s=100" width="100px;" alt="Robert"/><br /><sub><b>Robert</b></sub></a><br /><a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Robertcs8" title="Code">💻</a> <a href="#content-Robertcs8" title="Content">🖋</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Robertcs8" title="Documentation">📖</a> <a href="#design-Robertcs8" title="Design">🎨</a> <a href="#ideas-Robertcs8" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Robertcs8" title="Maintenance">🚧</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/commits?author=Robertcs8" title="Tests">⚠️</a> <a href="#example-Robertcs8" title="Examples">💡</a> <a href="https://github.com/ERNI-CoP-IoT/EnvironmentMeasurementSystem/pulls?q=is%3Apr+reviewed-by%3ARobertcs8" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
