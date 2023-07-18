@@ -27,7 +27,26 @@
         "example",
         "review"
       ]
+    },
+    {
+      "login": "Robertcs8",
+      "name": "Robert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100421143?v=4",
+      "profile": "https://www.betterask.erni/",
+      "contributions": [
+        "code",
+        "content",
+        "doc",
+        "design",
+        "ideas",
+        "maintenance",
+        "test",
+        "example",
+        "review"
+      ]
     }
   ],
-  "projectName": "EnvironmentMeasurementSystem"
+  "projectName": "EnvironmentMeasurementSystem",
+  "commitType": "docs",
+  "commitConvention": "angular"
 }
