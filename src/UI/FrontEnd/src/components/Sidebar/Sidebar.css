@@ -1,0 +1,26 @@
+h2 {
+    color: #ffffff;
+    padding: 0 30px;
+}
+
+.header-bar{
+    height: 50px;
+    background-color: #000000;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+    display: flex;
+}
+
+.sidebar{
+    width: 150px;
+    height: 100vh;
+    background-color: #272424;
+    position: fixed;
+    top: 0;
+}
+
+.sidebarwrap{
+    margin-top: 50px;
+}

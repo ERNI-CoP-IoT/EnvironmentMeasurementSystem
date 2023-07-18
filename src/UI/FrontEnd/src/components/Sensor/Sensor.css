@@ -1,0 +1,12 @@
+.sensor-container{
+  display:flex;
+  flex-direction: column;
+  margin:2rem;
+  max-width: 500px;
+}
+
+.sensor-detail-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-gap: 16px;
+}
