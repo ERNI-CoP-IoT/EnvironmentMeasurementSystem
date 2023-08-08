@@ -1,23 +1,22 @@
 ﻿using EMS.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EMS.Infrastructure
+namespace EMS.Infrastructure;
+
+/// <summary>
+/// The dependency injection class.
+/// </summary>
+public static class DependencyInjection
 {
     /// <summary>
-    /// The dependency injection class.
+    /// Adds the services.
     /// </summary>
-    public static class DependencyInjection
+    /// <param name="services">The services.</param>
+    /// <returns>IServiceCollection.</returns>
+    public static IServiceCollection AddServices(this IServiceCollection services)
     {
-        /// <summary>
-        /// Adds the services.
-        /// </summary>
-        /// <param name="services">The services.</param>
-        /// <returns>IServiceCollection.</returns>
-        public static IServiceCollection AddServices(this IServiceCollection services)
-        {
-            services.AddTransient<ISensorsService, SensorsService>();
-            services.AddTransient<IAlertsService, AlertsService>();
-            return services;
-        }
+        services.AddTransient<ISensorsService, SensorsService>();
+        services.AddTransient<IAlertsService, AlertsService>();
+        return services;
     }
 }

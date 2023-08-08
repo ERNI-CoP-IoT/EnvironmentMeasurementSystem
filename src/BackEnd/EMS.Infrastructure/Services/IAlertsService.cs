@@ -1,9 +1,8 @@
 ﻿using EMS.Domain.Dtos;
 
-namespace EMS.Infrastructure.Services
+namespace EMS.Infrastructure.Services;
+
+public interface IAlertsService
 {
-    public interface IAlertsService
-    {
-        List<Alert> GetAlerts();
-    }
+    List<Alert> GetAlerts();
 }

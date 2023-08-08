@@ -1,9 +1,8 @@
-﻿namespace EMS.Domain.Dtos
+﻿namespace EMS.Domain.Dtos;
+
+public class Marker
 {
-    public class Marker
-    {
-        public string Message { get; set; }
-        public string PosX { get; set; }
-        public string PosY { get; set; }
-    }
+    public string Message { get; set; }
+    public string PosX { get; set; }
+    public string PosY { get; set; }
 }
