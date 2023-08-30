@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<views:BaseContentPage
+    x:Class="EnvironmentMeasurementSystem.Views.Alerts.AlertsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:dto="clr-namespace:EnvironmentMeasurementSystem.Domain.Alerts;assembly=EnvironmentMeasurementSystem.Domain"
+    xmlns:i18n="clr-namespace:EnvironmentMeasurementSystem.MarkupExtensions"
+    xmlns:local="clr-namespace:EnvironmentMeasurementSystem.Views.Alerts"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:views="clr-namespace:EnvironmentMeasurementSystem.Views"
+    xmlns:vm="clr-namespace:EnvironmentMeasurementSystem.ViewModels.Alerts"
+    Title="{i18n:Translate Alerts_Title}"
+    x:DataType="vm:AlertsViewModel"
+    x:TypeArguments="vm:AlertsViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <mct:EnumToIntConverter x:Key="EnumToIntConverter" />
+            <mct:SelectedItemEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid
+            Margin="10,0,10,0"
+            ColumnDefinitions="3*,*"
+            ColumnSpacing="10">
+            <Grid
+                Grid.Column="0"
+                RowDefinitions="Auto,Auto,Auto,Auto,*"
+                RowSpacing="5">
+                <Label
+                    Grid.Row="0"
+                    Style="{StaticResource EmsRegularLargeFontStyle}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightThemeRedColor},
+                                                Dark={StaticResource DarkThemeRedColor}}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding CriticalAlerts}" />
+                            <Span Text=" " />
+                            <Span Text="{i18n:Translate System_Critical}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource EmsRegularLargeFontStyle}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightThemeRedColor},
+                                                Dark={StaticResource DarkThemeRedColor}}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding ErrorAlerts}" />
+                            <Span Text=" " />
+                            <Span Text="{i18n:Translate System_Error}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="2"
+                    Style="{StaticResource EmsRegularLargeFontStyle}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightThemeYellowColor},
+                                                Dark={StaticResource DarkThemeYellowColor}}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding WarningAlerts}" />
+                            <Span Text=" " />
+                            <Span Text="{i18n:Translate System_Warning}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="3"
+                    Style="{StaticResource EmsRegularLargeFontStyle}"
+                    Text="10 Info"
+                    TextColor="{AppThemeBinding Light={StaticResource LightThemeBlueColor},
+                                                Dark={StaticResource DarkThemeBlueColor}}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding InfoAlerts}" />
+                            <Span Text=" " />
+                            <Span Text="{i18n:Translate System_Info}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <ListView
+                    Grid.Row="4"
+                    CachingStrategy="RecycleElement"
+                    HorizontalOptions="FillAndExpand"
+                    IsPullToRefreshEnabled="True"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    ItemsSource="{Binding Alerts}"
+                    RefreshCommand="{Binding GetAlertsCommand}"
+                    SelectionMode="Single"
+                    VerticalOptions="FillAndExpand">
+                    <ListView.Behaviors>
+                        <mct:EventToCommandBehavior
+                            Command="{Binding SelectedCommand}"
+                            EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"
+                            EventName="ItemSelected" />
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="dto:Alert">
+                            <ViewCell>
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="{Binding Type}" />
+                                        <Label Text="{Binding Date}" />
+                                        <Label Text="{Binding Name}" />
+                                    </HorizontalStackLayout>
+                                    <Label Style="{StaticResource EmsRegularSmallFontStyle}" Text="{Binding Description}" />
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid
+                Grid.Column="1"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*"
+                VerticalOptions="FillAndExpand">
+                <Label Grid.Row="0" Text="Select Start Date" />
+                <DatePicker Grid.Row="1" Date="{Binding StartDate}" />
+                <Label Grid.Row="2" Text="Select End Date" />
+                <DatePicker Grid.Row="3" Date="{Binding EndDate}" />
+                <Label Grid.Row="4" Text="Select Alert type" />
+                <Picker
+                    Grid.Row="5"
+                    ItemsSource="{Binding AllAlertTypes}"
+                    SelectedIndex="{Binding TypeOfAlert, Converter={StaticResource EnumToIntConverter}, ConverterParameter={x:Type dto:AlertType}}" />
+                <Button
+                    Grid.Row="6"
+                    Command="{Binding GetAlertsCommand}"
+                    Text="test"
+                    VerticalOptions="EndAndExpand" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</views:BaseContentPage>

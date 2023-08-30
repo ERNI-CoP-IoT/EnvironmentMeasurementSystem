@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--
+        Dear Developer,
+        
+        Below colors like Accent & Primary should be in sync with those defined in Android's colors.xml. This way, we assure
+        their semantic keep consistent between both sides.
+        
+        Thanks!
+        
+        How to calculate the transparency
+        100% — FF
+        95% — F2
+        90% — E6
+        85% — D9
+        80% — CC
+        75% — BF
+        70% — B3
+        65% — A6
+        60% — 99
+        55% — 8C
+        50% — 80
+        45% — 73
+        40% — 66
+        35% — 59
+        30% — 4D
+        25% — 40
+        20% — 33
+        15% — 26
+        10% — 1A
+        5% — 0D
+        0% — 00
+        
+        LightColor #E1F4FF with 80% transparency will be #CCE1F4FF
+        
+        —A Developer
+    -->
+
+    <Color x:Key="Primary">#512BD4</Color>
+    <Color x:Key="Secondary">#DFD8F7</Color>
+    <Color x:Key="Tertiary">#2B0B98</Color>
+    <Color x:Key="White">White</Color>
+    <Color x:Key="Black">Black</Color>
+    <Color x:Key="Gray100">#E1E1E1</Color>
+    <Color x:Key="Gray200">#C8C8C8</Color>
+    <Color x:Key="Gray300">#ACACAC</Color>
+    <Color x:Key="Gray400">#919191</Color>
+    <Color x:Key="Gray500">#6E6E6E</Color>
+    <Color x:Key="Gray600">#404040</Color>
+    <Color x:Key="Gray900">#212121</Color>
+    <Color x:Key="Gray950">#141414</Color>
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}" />
+    <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}" />
+    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}" />
+    <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}" />
+    <SolidColorBrush x:Key="Gray100Brush" Color="{StaticResource Gray100}" />
+    <SolidColorBrush x:Key="Gray200Brush" Color="{StaticResource Gray200}" />
+    <SolidColorBrush x:Key="Gray300Brush" Color="{StaticResource Gray300}" />
+    <SolidColorBrush x:Key="Gray400Brush" Color="{StaticResource Gray400}" />
+    <SolidColorBrush x:Key="Gray500Brush" Color="{StaticResource Gray500}" />
+    <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}" />
+    <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}" />
+    <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}" />
+
+    <Color x:Key="Yellow100Accent">#F7B548</Color>
+    <Color x:Key="Yellow200Accent">#FFD590</Color>
+    <Color x:Key="Yellow300Accent">#FFE5B9</Color>
+    <Color x:Key="Cyan100Accent">#28C2D1</Color>
+    <Color x:Key="Cyan200Accent">#7BDDEF</Color>
+    <Color x:Key="Cyan300Accent">#C3F2F4</Color>
+    <Color x:Key="Blue100Accent">#3E8EED</Color>
+    <Color x:Key="Blue200Accent">#72ACF1</Color>
+    <Color x:Key="Blue300Accent">#A7CBF6</Color>
+
+
+    <!--  Light color region  -->
+    <Color x:Key="LightThemePrimaryColor">#FF9C2E</Color>
+    <Color x:Key="LightThemeComplimentaryColor">#CC6600</Color>
+    <Color x:Key="LightThemeComplimentaryColor1">#FF9933</Color>
+    <Color x:Key="LightThemeComplimentaryColor2">#FFCC66</Color>
+    <Color x:Key="LightThemeNeutralColor">#D9D9D9</Color>
+    <!--<Color x:Key="DarkColor">#516951</Color>-->
+    <Color x:Key="LightThemeDarkColor">#006600</Color>
+    <Color x:Key="LightThemeLightColor">#E1F4FF</Color>
+    <Color x:Key="LightThemeLightColor1">#FFF9E7</Color>
+    <Color x:Key="LightThemeBlackColor">#333333</Color>
+    <Color x:Key="LightThemeBlackColor1">#4F4F4F</Color>
+    <Color x:Key="LightThemeGrayColor">#666666</Color>
+    <Color x:Key="LightThemeGrayColor1">#A6A6A6</Color>
+    <Color x:Key="LightThemeGrayColor2">#F7F8FA</Color>
+    <Color x:Key="LightThemeGreenColor">#339966</Color>
+    <Color x:Key="LightThemeGreenColor2">#92D050</Color>
+    <Color x:Key="LightThemeGreen40TransparentColor">#66339966</Color>
+    <Color x:Key="LightThemeWhiteColor">#FFFFFF</Color>
+    <Color x:Key="LightThemeWhiteColor65Transparent">#A6FFFFFF</Color>
+    <Color x:Key="LightThemeWhiteColor50Transparent">#80FFFFFF</Color>
+    <Color x:Key="LightThemeBlueColor">#3582DF</Color>
+    <Color x:Key="LightThemeBlueColor1">#9EBFE5</Color>
+    <Color x:Key="LightThemeBlueColor2">#56CCF2</Color>
+    <Color x:Key="LightThemeRedColor">#EE001D</Color>
+    <Color x:Key="LightThemeYellowColor">#FFA600</Color>
+    <Color x:Key="LightThemeAccentColor">#2F4B66</Color>
+    <Color x:Key="LightThemeAccentColor1">#673C4F</Color>
+    <Color x:Key="LightThemeFertilizationColor">#A52A2A</Color>
+    <Color x:Key="LightThemePlagueColor">#8A2BE2</Color>
+    <Color x:Key="LightThemeHerbicideColor">#008000</Color>
+    <Color x:Key="LightThemeIrrigationColor">#0000FF</Color>
+    <Color x:Key="LightThemeHarvestColor">#9ACD32</Color>
+    <Color x:Key="LightThemeLabourColor">#FFA600</Color>
+    <Color x:Key="LightThemeOtherColor">#FF0000</Color>
+
+    <!--  Dark color region  -->
+    <Color x:Key="DarkThemePrimaryColor">#FF9C2E</Color>
+    <Color x:Key="DarkThemeComplimentaryColor">#CC6600</Color>
+    <Color x:Key="DarkThemeComplimentaryColor1">#FF9933</Color>
+    <Color x:Key="DarkThemeComplimentaryColor2">#FFCC66</Color>
+    <Color x:Key="DarkThemeNeutralColor">#D9D9D9</Color>
+    <!--<Color x:Key="DarkColor">#516951</Color>-->
+    <Color x:Key="DarkThemeDarkColor">#006600</Color>
+    <Color x:Key="DarkThemeLightColor">#E1F4FF</Color>
+    <Color x:Key="DarkThemeLightColor1">#FFF9E7</Color>
+    <Color x:Key="DarkThemeBlackColor">#333333</Color>
+    <Color x:Key="DarkThemeBlackColor1">#4F4F4F</Color>
+    <Color x:Key="DarkThemeGrayColor">#666666</Color>
+    <Color x:Key="DarkThemeGrayColor1">#A6A6A6</Color>
+    <Color x:Key="DarkThemeGrayColor2">#F7F8FA</Color>
+    <Color x:Key="DarkThemeGreenColor">#339966</Color>
+    <Color x:Key="DarkThemeGreenColor2">#92D050</Color>
+    <Color x:Key="DarkThemeGreen40TransparentColor">#66339966</Color>
+    <Color x:Key="DarkThemeWhiteColor">#FFFFFF</Color>
+    <Color x:Key="DarkThemeWhiteColor65Transparent">#A6FFFFFF</Color>
+    <Color x:Key="DarkThemeWhiteColor50Transparent">#80FFFFFF</Color>
+    <Color x:Key="DarkThemeBlueColor">#3582DF</Color>
+    <Color x:Key="DarkThemeBlueColor1">#9EBFE5</Color>
+    <Color x:Key="DarkThemeBlueColor2">#56CCF2</Color>
+    <Color x:Key="DarkThemeRedColor">#EE001D</Color>
+    <Color x:Key="DarkThemeYellowColor">#FFA600</Color>
+    <Color x:Key="DarkThemeAccentColor">#2F4B66</Color>
+    <Color x:Key="DarkThemeAccentColor1">#673C4F</Color>
+    <Color x:Key="DarkThemeFertilizationColor">#A52A2A</Color>
+    <Color x:Key="DarkThemePlagueColor">#8A2BE2</Color>
+    <Color x:Key="DarkThemeHerbicideColor">#008000</Color>
+    <Color x:Key="DarkThemeIrrigationColor">#0000FF</Color>
+    <Color x:Key="DarkThemeHarvestColor">#9ACD32</Color>
+    <Color x:Key="DarkThemeLabourColor">#FFA600</Color>
+    <Color x:Key="DarkThemeOtherColor">#FF0000</Color>
+
+</ResourceDictionary>

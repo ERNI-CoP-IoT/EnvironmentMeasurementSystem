@@ -34,18 +34,29 @@ public class SensorsService : ISensorsService
         {
             response.Add(new Sensor()
             {
-                BatteryLevel = $"{randomNumOfSensors.Next(100)}%",
+                Id = Guid.NewGuid(),
+                BatteryLevel = randomNumOfSensors.Next(100),
+                BatteryLevelUnit = "%",
                 Description = "This is the fake description",
-                Humidity = $"{randomNumOfSensors.Next(100)}%",
+                Humidity = randomNumOfSensors.Next(100),
+                HumidityUnit = "%",
                 Name = $"Name {i}",
-                Temperature = $"{randomNumOfSensors.Next()}ºC",
-                CO2 = $"{randomNumOfSensors.Next(50)} ppm",
-                NOx = $"{randomNumOfSensors.Next(50)} ppm",
-                Pm25 = $"{randomNumOfSensors.Next(100)} ug/m3",
-                Pm10 = $"{randomNumOfSensors.Next(100)} ug/m3",
-                Pressure = $"{randomNumOfSensors.Next(3000)} Pa",
-                Type = "Temperature"
-            });
+                Temperature = randomNumOfSensors.Next(),
+                TemperatureUnit = "ºC",
+                Co2 = randomNumOfSensors.Next(50),
+                Co2Unit = "ppm",
+                NOx = randomNumOfSensors.Next(50),
+                NOxUnit = "ppm",
+                Pm25 = randomNumOfSensors.Next(100),
+                Pm25Unit = "ug/m3",
+                Pm10 = randomNumOfSensors.Next(100),
+                Pm10Unit = "ug/m3",
+                Pressure = randomNumOfSensors.Next(3000),
+                PressureUnit = "Pa",
+                Type = "Temperature",
+                Longitude = Math.Round(-90 + randomNumOfSensors.NextDouble() * 180, 6),
+                Latitude = Math.Round(-180 + randomNumOfSensors.NextDouble() * 360, 6)
+            }); ;
         }
         return response;
     }
