@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="EnvironmentMeasurementSystem.Views.LogIn.LogInPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:i18n="clr-namespace:EnvironmentMeasurementSystem.MarkupExtensions"
+    xmlns:local="clr-namespace:EnvironmentMeasurementSystem.Views.LogIn"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{i18n:Translate LogIn_Title}"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="Modal"
+    mc:Ignorable="d">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False" />
+    </Shell.BackButtonBehavior>
+    <ContentPage.Content>
+        <Grid>
+            <Image
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Source="logingpagebackground.jpg"
+                VerticalOptions="FillAndExpand" />
+            <Frame
+                Margin="-1,200,-1,200"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Center">
+                <VerticalStackLayout
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"
+                    Spacing="100"
+                    VerticalOptions="CenterAndExpand">
+                    <Label
+                        BackgroundColor="#40ffffff"
+                        FontSize="40"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource EmsHeaderFontStyle}"
+                        Text="{i18n:Translate LogIn_Title}" />
+                    <Button
+                        BackgroundColor="{AppThemeBinding Light={DynamicResource LightThemeGreenColor},
+                                                          Dark={DynamicResource DarkThemeGreenColor}}"
+                        Command="{Binding LogInCommand}"
+                        HorizontalOptions="Center"
+                        Text="{i18n:Translate LogIn_LogIn}"
+                        TextColor="{AppThemeBinding Light={DynamicResource LightThemeWhiteColor},
+                                                    Dark={DynamicResource DarkThemeWhiteColor}}"
+                        VerticalOptions="Center"
+                        WidthRequest="200                         " />
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

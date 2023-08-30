@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage
+    x:Class="EnvironmentMeasurementSystem.Views.Home.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dto="clr-namespace:EnvironmentMeasurementSystem.Domain.Alerts;assembly=EnvironmentMeasurementSystem.Domain"
+    xmlns:i18n="clr-namespace:EnvironmentMeasurementSystem.MarkupExtensions"
+    xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:model="clr-namespace:EnvironmentMeasurementSystem.Models;assembly=EnvironmentMeasurementSystem"
+    xmlns:views="clr-namespace:EnvironmentMeasurementSystem.Views"
+    xmlns:vm="clr-namespace:EnvironmentMeasurementSystem.ViewModels.Home"
+    Title="{i18n:Translate Home_Title}"
+    x:DataType="vm:HomeViewModel"
+    x:TypeArguments="vm:HomeViewModel">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <mct:EnumToIntConverter x:Key="EnumToIntConverter" />
+            <mct:SelectedItemEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+        ColumnDefinitions="3*,*"
+        ColumnSpacing="10"
+        RowDefinitions="5*,75*">
+        <HorizontalStackLayout
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalOptions="CenterAndExpand"
+            Spacing="20"
+            VerticalOptions="CenterAndExpand">
+            <Button Command="{Binding ShowOnlyMySensorsCommand}" Text="{i18n:Translate Home_Show_Only_My_Sensors}" />
+            <Button Command="{Binding ShowAllSensorsCommand}" Text="{i18n:Translate Home_Show_All_Sensors}" />
+        </HorizontalStackLayout>
+        <maps:Map
+            x:Name="TheMap"
+            Grid.Row="1"
+            Grid.Column="0"
+            IsScrollEnabled="True"
+            IsShowingUser="True"
+            IsZoomEnabled="True"
+            ItemsSource="{Binding Sensors}"
+            MapType="Street">
+            <maps:Map.ItemTemplate>
+                <DataTemplate x:DataType="model:SensorModel">
+                    <maps:Pin
+                        Label="{Binding Sensor.Name}"
+                        Location="{Binding Location}"
+                        Type="Place" />
+                </DataTemplate>
+            </maps:Map.ItemTemplate>
+        </maps:Map>
+        <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+            <Label Style="{StaticResource EmsBoldMediumFontStyle}" Text="{i18n:Translate Home_Alerts}" />
+            <Label Style="{StaticResource EmsRegularLargeFontStyle}" TextColor="{AppThemeBinding Light={StaticResource LightThemeRedColor}, Dark={StaticResource DarkThemeRedColor}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding CriticalAlerts}" />
+                        <Span Text=" " />
+                        <Span Text="{i18n:Translate System_Critical}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Style="{StaticResource EmsRegularLargeFontStyle}" TextColor="{AppThemeBinding Light={StaticResource LightThemeRedColor}, Dark={StaticResource DarkThemeRedColor}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding ErrorAlerts}" />
+                        <Span Text=" " />
+                        <Span Text="{i18n:Translate System_Error}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Style="{StaticResource EmsRegularLargeFontStyle}" TextColor="{AppThemeBinding Light={StaticResource LightThemeYellowColor}, Dark={StaticResource DarkThemeYellowColor}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding WarningAlerts}" />
+                        <Span Text=" " />
+                        <Span Text="{i18n:Translate System_Warning}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Style="{StaticResource EmsRegularLargeFontStyle}"
+                Text="10 Info"
+                TextColor="{AppThemeBinding Light={StaticResource LightThemeBlueColor},
+                                            Dark={StaticResource DarkThemeBlueColor}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding InfoAlerts}" />
+                        <Span Text=" " />
+                        <Span Text="{i18n:Translate System_Info}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <ListView ItemsSource="{Binding Alerts}">
+                <ListView.Behaviors>
+                    <mct:EventToCommandBehavior
+                        Command="{Binding SelectedAlertCommand}"
+                        EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"
+                        EventName="ItemSelected" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="dto:Alert">
+                        <ViewCell>
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="{Binding Type}" />
+                                    <Label Text="{Binding Date}" />
+                                    <Label Text="{Binding Name}" />
+                                </HorizontalStackLayout>
+                                <Label Style="{StaticResource EmsRegularSmallFontStyle}" Text="{Binding Description}" />
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </Grid>
+</views:BaseContentPage>

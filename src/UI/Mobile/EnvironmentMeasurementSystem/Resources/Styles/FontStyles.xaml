@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--
+    Dear Developer,
+
+    Since we'd like to support handicapped users we're not using explicit sizes along the entire app, but named ones.
+    Please, follow this table to gather which one you had to use:
+
+    - < 16 -> Small
+    - >= 16 && < 22 -> Default
+    - >= 22 && < 28 -> Medium
+    - >= 28 -> Large
+
+    Thanks!
+
+    —A Developer
+    -->
+
+    <!--  Font styles  -->
+    <Style x:Key="TumblyRegularFontStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Tumbly" />
+    </Style>
+
+    <Style x:Key="ABeeZeeRegularFontStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="ABeeZee" />
+    </Style>
+
+    <Style x:Key="MontserratRegularFontStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratRegular" />
+    </Style>
+
+    <Style x:Key="MontserratBoldFontStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="MontserratBold" />
+    </Style>
+
+    <Style
+        x:Key="EmsHeaderFontStyle"
+        BasedOn="{StaticResource TumblyRegularFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="EmsFlyOutMediumFontStyle"
+        BasedOn="{StaticResource ABeeZeeRegularFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="EmsRegularLargeFontStyle"
+        BasedOn="{StaticResource MontserratRegularFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="EmsRegularMediumFontStyle"
+        BasedOn="{StaticResource MontserratRegularFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <!--<Style
+        x:Key="EmsRegularMediumFontRadioButtonStyle"
+        TargetType="RadioButton:SfRadioButton">
+        <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor},
+                                                             Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>-->
+
+    <Style
+        x:Key="EmsRegularSmallFontStyle"
+        BasedOn="{StaticResource MontserratRegularFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="EmsRegularMicroFontStyle"
+        BasedOn="{StaticResource MontserratRegularFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="EmsBoldLargeFontStyle"
+        BasedOn="{StaticResource MontserratBoldFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="EmsBoldMediumFontStyle"
+        BasedOn="{StaticResource MontserratBoldFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="EmsBoldSmallFontStyle"
+        BasedOn="{StaticResource MontserratBoldFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style x:Key="BrandonGrotesqueLightMediumFontStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="BrandonGrotesqueLight" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="BrandonGrotesqueLightDefaultFontStyle"
+        BasedOn="{StaticResource BrandonGrotesqueLightMediumFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Default" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="BrandonGrotesqueLightSmallFontStyle"
+        BasedOn="{StaticResource BrandonGrotesqueLightMediumFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style x:Key="BrandonGrotesqueMediumMediumFontStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="BrandonGrotesqueMedium" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="BrandonGrotesqueMediumDefaultFontStyle"
+        BasedOn="{StaticResource BrandonGrotesqueMediumMediumFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Default" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="BrandonGrotesqueMediumBoldDefaultFontStyle"
+        BasedOn="{StaticResource BrandonGrotesqueMediumDefaultFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="BrandonGrotesqueMediumLargeFontStyle"
+        BasedOn="{StaticResource BrandonGrotesqueMediumMediumFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="BrandonGrotesqueMediumSmallFontStyle"
+        BasedOn="{StaticResource BrandonGrotesqueMediumMediumFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+
+    <Style
+        x:Key="BrandonGrotesqueMediumBoldSmallFontStyle"
+        BasedOn="{StaticResource BrandonGrotesqueMediumSmallFontStyle}"
+        TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightThemeGrayColor}, Dark={StaticResource DarkThemeGrayColor}}" />
+    </Style>
+</ResourceDictionary>

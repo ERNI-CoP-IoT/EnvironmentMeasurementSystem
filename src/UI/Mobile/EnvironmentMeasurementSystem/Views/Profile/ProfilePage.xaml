@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<views:BaseContentPage
+    x:Class="EnvironmentMeasurementSystem.Views.Profile.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:dto="clr-namespace:EnvironmentMeasurementSystem.Domain.Sensors;assembly=EnvironmentMeasurementSystem.Domain"
+    xmlns:i18n="clr-namespace:EnvironmentMeasurementSystem.MarkupExtensions"
+    xmlns:local="clr-namespace:EnvironmentMeasurementSystem.Views.Profile"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:views="clr-namespace:EnvironmentMeasurementSystem.Views"
+    xmlns:vm="clr-namespace:EnvironmentMeasurementSystem.ViewModels.Profile"
+    Title="{i18n:Translate Profile_Title}"
+    x:DataType="vm:ProfileViewModel"
+    x:TypeArguments="vm:ProfileViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid
+            Margin="10,10,0,0"
+            ColumnDefinitions="Auto,*"
+            ColumnSpacing="80"
+            HorizontalOptions="FillAndExpand"
+            RowDefinitions="Auto,Auto,*"
+            RowSpacing="10"
+            VerticalOptions="FillAndExpand">
+            <toolkit:AvatarView
+                Grid.Row="0"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightThemeGrayColor1},
+                                                  Dark={StaticResource DarkThemeGrayColor1}}"
+                CornerRadius="100"
+                FontAttributes="Bold"
+                FontSize="40"
+                HeightRequest="100"
+                HorizontalOptions="Start"
+                Text="TC"
+                TextColor="{AppThemeBinding Light={StaticResource LightThemeWhiteColor},
+                                            Dark={StaticResource DarkThemeWhiteColor}}"
+                WidthRequest="100" />
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0"
+                RowDefinitions="*,Auto"
+                RowSpacing="2">
+                <HorizontalStackLayout Grid.Row="0" Spacing="5">
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="{i18n:Translate Profile_Hello}"
+                        VerticalOptions="Center" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Style="{StaticResource EmsBoldMediumFontStyle}"
+                        Text="{Binding UserName}"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="1">
+                    <Label Text="{Binding TodayDate}" />
+                </HorizontalStackLayout>
+            </Grid>
+            <VerticalStackLayout
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="{i18n:Translate Profile_My_Sensors}"
+                    VerticalOptions="Center" />
+                <ListView
+                    CachingStrategy="RecycleElement"
+                    HorizontalOptions="FillAndExpand"
+                    IsPullToRefreshEnabled="True"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    ItemsSource="{Binding MySensors}"
+                    RefreshCommand="{Binding RefreshCommand}"
+                    SelectionMode="Single"
+                    VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="dto:Sensor">
+                            <ViewCell>
+                                <Grid
+                                    ColumnDefinitions="Auto,Auto,Auto,*"
+                                    ColumnSpacing="20"
+                                    HorizontalOptions="FillAndExpand"
+                                    RowDefinitions="Auto,Auto,Auto,Auto,*"
+                                    RowSpacing="5"
+                                    VerticalOptions="FillAndExpand">
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Name}" />
+                                                <Span Text="{Binding Name}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Type}" />
+                                                <Span Text="{Binding Type}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label
+                                        Grid.Row="2"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Description}" />
+                                                <Span Text="{Binding Description}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="3" Grid.Column="0">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Temperature}" />
+                                                <Span>
+                                                    <Span.Text>
+                                                        <MultiBinding StringFormat="{} {0} {1}">
+                                                            <Binding Path="Temperature" />
+                                                            <Binding Path="TemperatureUnit" />
+                                                        </MultiBinding>
+                                                    </Span.Text>
+                                                </Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="4" Grid.Column="0">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Humidity}" />
+                                                <Span>
+                                                    <Span.Text>
+                                                        <MultiBinding StringFormat="{} {0} {1}">
+                                                            <Binding Path="Humidity" />
+                                                            <Binding Path="HumidityUnit" />
+                                                        </MultiBinding>
+                                                    </Span.Text>
+                                                </Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="3" Grid.Column="1">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Co2}" />
+                                                <Span>
+                                                    <Span.Text>
+                                                        <MultiBinding StringFormat="{} {0} {1}">
+                                                            <Binding Path="Co2" />
+                                                            <Binding Path="Co2Unit" />
+                                                        </MultiBinding>
+                                                    </Span.Text>
+                                                </Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="4" Grid.Column="1">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_NOx}" />
+                                                <Span>
+                                                    <Span.Text>
+                                                        <MultiBinding StringFormat="{} {0} {1}">
+                                                            <Binding Path="NOx" />
+                                                            <Binding Path="NOxUnit" />
+                                                        </MultiBinding>
+                                                    </Span.Text>
+                                                </Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="3" Grid.Column="2">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Pm25}" />
+                                                <Span>
+                                                    <Span.Text>
+                                                        <MultiBinding StringFormat="{} {0} {1}">
+                                                            <Binding Path="Pm25" />
+                                                            <Binding Path="Pm25Unit" />
+                                                        </MultiBinding>
+                                                    </Span.Text>
+                                                </Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="4" Grid.Column="2">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Pm10}" />
+                                                <Span>
+                                                    <Span.Text>
+                                                        <MultiBinding StringFormat="{} {0} {1}">
+                                                            <Binding Path="Pm10" />
+                                                            <Binding Path="Pm10Unit" />
+                                                        </MultiBinding>
+                                                    </Span.Text>
+                                                </Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="3" Grid.Column="3">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_Pressure}" />
+                                                <Span>
+                                                    <Span.Text>
+                                                        <MultiBinding StringFormat="{} {0} {1}">
+                                                            <Binding Path="Pressure" />
+                                                            <Binding Path="PressureUnit" />
+                                                        </MultiBinding>
+                                                    </Span.Text>
+                                                </Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="4" Grid.Column="3">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold" Text="{i18n:Translate Sensor_BatteryLevel}" />
+                                                <Span>
+                                                    <Span.Text>
+                                                        <MultiBinding StringFormat="{} {0} {1}">
+                                                            <Binding Path="BatteryLevel" />
+                                                            <Binding Path="BatteryLevelUnit" />
+                                                        </MultiBinding>
+                                                    </Span.Text>
+                                                </Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </Grid>
+                                <!--  vell view  -->
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </Grid>
+    </ContentPage.Content>
+</views:BaseContentPage>

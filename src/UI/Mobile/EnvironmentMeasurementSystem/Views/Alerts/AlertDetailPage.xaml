@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="EnvironmentMeasurementSystem.Views.Alerts.AlertDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:i18n="clr-namespace:EnvironmentMeasurementSystem.MarkupExtensions"
+    xmlns:local="clr-namespace:EnvironmentMeasurementSystem.Views.Alerts"
+    xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:EnvironmentMeasurementSystem.Models;assembly=EnvironmentMeasurementSystem"
+    xmlns:vm="clr-namespace:EnvironmentMeasurementSystem.ViewModels.Alerts"
+    Title="{i18n:Translate AlertsDetail_Title}"
+    x:DataType="vm:AlertDetailViewModel"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*">
+            <VerticalStackLayout Grid.Row="0">
+                <Label HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{i18n:Translate AlertsDetail_AlertName}" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Alert.Name}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{i18n:Translate AlertsDetail_AlertType}" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Alert.Type}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{i18n:Translate AlertsDetail_AlertDate}" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Alert.Date}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{i18n:Translate AlertsDetail_AlertDescription}" />
+                            <Span Text=" " />
+                            <Span Text="{Binding Alert.Description}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+            <maps:Map
+                x:Name="TheMap"
+                Grid.Row="1"
+                Grid.Column="0"
+                IsScrollEnabled="True"
+                IsShowingUser="True"
+                IsZoomEnabled="True"
+                ItemsSource="{Binding Sensors, Mode=TwoWay}"
+                MapType="Street">
+                <maps:Map.ItemTemplate>
+                    <DataTemplate x:DataType="model:SensorModel">
+                        <maps:Pin
+                            Label="{Binding Sensor.Name}"
+                            Location="{Binding Location}"
+                            Type="Place" />
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>
+                <maps:Map.Pins>
+                    <maps:Pin />
+                </maps:Map.Pins>
+            </maps:Map>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

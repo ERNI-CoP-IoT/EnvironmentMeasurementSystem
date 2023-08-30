@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="EnvironmentMeasurementSystem.Views.ApplicationShell.FlyoutHeader"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:i18n="clr-namespace:EnvironmentMeasurementSystem.MarkupExtensions"
+    xmlns:local="clr-namespace:EnvironmentMeasurementSystem.Views.ApplicationShell"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentView.Padding>
+        <!--  iOS Top stands for default + 20 (safe area distance)  -->
+        <Thickness
+            Left="{StaticResource Default2Margin}"
+            Right="{StaticResource Default2Margin}"
+            Top="{OnPlatform Android={StaticResource Default2Margin},
+                             WinUI={StaticResource Default2Margin},
+                             iOS=44}" />
+
+    </ContentView.Padding>
+    <VerticalStackLayout>
+        <Image
+            Aspect="AspectFit"
+            HeightRequest="48"
+            Source="logoleaves.png"
+            WidthRequest="48" />
+        <Label
+            HorizontalTextAlignment="Center"
+            Style="{StaticResource EmsHeaderFontStyle}"
+            Text="{i18n:Translate FlyoutHeader_Application_Name}"
+            VerticalTextAlignment="Center">
+            <Label.Margin>
+                <Thickness Bottom="{StaticResource Default2Margin}" Left="{StaticResource 0.5xDefaultMargin}" />
+            </Label.Margin>
+        </Label>
+        <Label
+            HorizontalTextAlignment="Center"
+            Style="{StaticResource ABeeZeeRegularFontStyle}"
+            Text="{Binding UserName}"
+            TextColor="{AppThemeBinding Light={StaticResource LightThemeGrayColor},
+                                        Dark={StaticResource DarkThemeGrayColor}}"
+            VerticalTextAlignment="Center">
+            <Label.Margin>
+                <Thickness Bottom="{StaticResource 0.5xDefaultMargin}" Left="{StaticResource 0.5xDefaultMargin}" />
+            </Label.Margin>
+        </Label>
+
+        <BoxView
+            HeightRequest="1"
+            WidthRequest="100"
+            Color="#828282" />
+    </VerticalStackLayout>
+</ContentView>

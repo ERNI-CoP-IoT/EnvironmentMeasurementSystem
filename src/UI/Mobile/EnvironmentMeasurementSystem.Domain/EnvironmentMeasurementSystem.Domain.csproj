@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0</TargetFrameworks>
+		<ImplicitUsings>true</ImplicitUsings>
+	</PropertyGroup>
+
+</Project>

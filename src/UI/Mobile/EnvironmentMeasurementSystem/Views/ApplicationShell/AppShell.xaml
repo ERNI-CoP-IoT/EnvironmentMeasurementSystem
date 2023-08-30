@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EnvironmentMeasurementSystem.Views.ApplicationShell.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:alertsViews="clr-namespace:EnvironmentMeasurementSystem.Views.Alerts"
+    xmlns:appShell="clr-namespace:EnvironmentMeasurementSystem.Views.ApplicationShell"
+    xmlns:homeViews="clr-namespace:EnvironmentMeasurementSystem.Views.Home"
+    xmlns:i18n="clr-namespace:EnvironmentMeasurementSystem.MarkupExtensions"
+    xmlns:logInViews="clr-namespace:EnvironmentMeasurementSystem.Views.LogIn"
+    xmlns:profileViews="clr-namespace:EnvironmentMeasurementSystem.Views.Profile"
+    xmlns:settingsViews="clr-namespace:EnvironmentMeasurementSystem.Views.Settings"
+    Title="{i18n:Translate Shell_Title}"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    Shell.FlyoutBehavior="Flyout">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False" />
+    </Shell.BackButtonBehavior>
+    <Shell.FlyoutHeader>
+        <appShell:FlyoutHeader BackgroundColor="{AppThemeBinding Light={StaticResource LightThemeGrayColor2}, Dark={StaticResource LightThemeGrayColor2}}" />
+    </Shell.FlyoutHeader>
+
+    <ShellContent
+        Title="{i18n:Translate Shell_Menu_Item_LogIn}"
+        ContentTemplate="{DataTemplate logInViews:LogInPage}"
+        IsVisible="{Binding ShowLogIn}"
+        Route="LogInPage" />
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Shell.TabBarIsVisible="False">
+        <ShellContent
+            Title="{i18n:Translate Shell_Menu_Item_Home}"
+            ContentTemplate="{DataTemplate homeViews:HomePage}"
+            Icon="home.png"
+            Route="HomePage" />
+        <ShellContent
+            Title="{i18n:Translate Shell_Menu_Item_Alerts}"
+            ContentTemplate="{DataTemplate alertsViews:AlertsPage}"
+            Icon="alerts.png"
+            Route="AlertsPage"
+            Shell.NavBarIsVisible="true" />
+        <ShellContent
+            Title="{i18n:Translate Shell_Menu_Item_Profile}"
+            ContentTemplate="{DataTemplate profileViews:ProfilePage}"
+            Icon="profile.png"
+            Route="ProfilePage" />
+        <ShellContent
+            Title="{i18n:Translate Shell_Menu_Item_Settings}"
+            ContentTemplate="{DataTemplate settingsViews:SettingsPage}"
+            Icon="settings.png"
+            Route="SettingsPage" />
+        <ShellContent
+            Title="{i18n:Translate Shell_Menu_Item_LogOut}"
+            ContentTemplate="{DataTemplate logInViews:LogInPage}"
+            IsVisible="{Binding ShowLogOut}"
+            Route="LogInPage" />
+    </FlyoutItem>
+</Shell>
